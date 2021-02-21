@@ -20,5 +20,6 @@ cc.Class({
         num = Math.round(num);
         num = num%m + 1;
         this.numberLabel.string = num;
+        this.number = num;
     },
 });

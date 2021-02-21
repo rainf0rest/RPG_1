@@ -4,11 +4,13 @@ cc.Class({
     properties: {
         enemyNode: cc.Node,
         playerNode: cc.Node,
+        scoreNode: cc.Node,
     },
     
     onLoad() {
         this.enemy = this.enemyNode.getComponent('enemy');
         this.player = this.playerNode.getComponent('player');
+        this.score = this.scoreNode.getComponent('score');
     },
 
     start() {
@@ -21,6 +23,16 @@ cc.Class({
         let top = cfg.top;
         this.enemy.productNumber(top);
         this.player.productNumber(top);
+        if(this.player.number > this.enemy.number) {
+            this.score.print("win");
+        }
+        else if(this.player.number == this.enemy.number) {
+            this.score.print("draw");
+        }
+        else {
+            this.score.print("fail");
+        }
+        
     },
 
 });
