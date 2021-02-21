@@ -18,9 +18,9 @@ cc.Class({
     },
 
     playGame() {
-        this.enemy.productNumber();
-        //this.enemy.init(3);
-        this.player.productNumber();
+        let top = cfg.top;
+        this.enemy.productNumber(top);
+        this.player.productNumber(top);
     },
 
 });
